@@ -1,42 +1,20 @@
 # Complete QV Project
 
-## `extract-calibration-data.ipynb` 
+## `1_Extract_Calibration.ipynb` 
 - extracts calibration data from IBM Quantum backends and stores it locally (uses environment `runtime.txt`)
 - stores snapshots under: `calibrations/<backend_name>/<timestamp>.json`
 - this notebook only needs to be run when updating calibration data
 
 
-## `run-experiment.ipynb` 
+## `2_Run_Experiment.ipynb` 
 - runs Quantum Volume experiments using classical simulation with GPU acceleration (uses environment `gpu.txt`)
 - uses the GPU environment with: `qiskit-aer-gpu`, CUDA-enabled Aer simulation
+- enumerates connected qubit subsets of three from the device coupling graph and calculates QV for each
 
 
-## TODO / Future Work
+## `3_Analyze_Results.ipynb` 
+- 
 
-### Qubit Subset Selection
-- Enumerate **connected qubit subsets** from the device coupling graph
-- Rank candidate subsets by:
-  - connectivity
-  - estimated two-qubit error rates
-- Avoid brute-force enumeration for large devices via:
-  - heuristic search
-  - graph-based pruning strategies
-
-### Quantum Volume Automation
-- Automate **QV frontier detection**:
-  - determine the maximum passing subset size `m`
-- Cache and reuse results across runs to reduce recomputation
-
-### Comparative Analysis
-- Compare QV results across:
-  - different calibration snapshots (temporal variation)
-  - different IBM Quantum backends (  
-    e.g. Fez vs Marrakesh vs Torino)
-
-### Visualization
-- Plot **HOP distributions** per subset size
-- Plot **confidence vs subset size**
-- Visualize QV frontier across devices and calibrations
 
 
 ## Quantum Volume Methodology
