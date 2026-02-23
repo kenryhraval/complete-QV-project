@@ -9,12 +9,10 @@
 ## `2_Run_Experiment.ipynb` 
 - runs Quantum Volume experiments using classical simulation with GPU acceleration (uses environment `gpu.txt`)
 - uses the GPU environment with: `qiskit-aer-gpu`, CUDA-enabled Aer simulation
-- enumerates connected qubit subsets of three from the device coupling graph and calculates QV for each
+- enumerates connected qubit n-tuples from the device coupling graph and calculates QV for each
 
 
 ## `3_Analyze_Results.ipynb` 
-- 
-
 
 
 ## Quantum Volume Methodology
