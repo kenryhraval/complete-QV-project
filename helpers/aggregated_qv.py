@@ -43,7 +43,7 @@ def compute_node_margin(G, df, z_97=Z_97, qv_threshold=QV_THRESHOLD):
     return nodes, margin
 
 
-def plot_node_heatmaps_grid(G, pos, dfs_by_q, z_97=Z_97, qv_threshold=QV_THRESHOLD):
+def plot_aggregated_qv_grid(G, pos, dfs_by_q, z_97=Z_97, qv_threshold=QV_THRESHOLD):
     margins_by_q = {}
 
     for q, df in dfs_by_q.items():
@@ -93,8 +93,12 @@ def plot_node_heatmaps_grid(G, pos, dfs_by_q, z_97=Z_97, qv_threshold=QV_THRESHO
     # ---- colorbar on the side ----
     sm = plt.cm.ScalarMappable(norm=norm, cmap=cmap)
     sm.set_array([])
-    fig.colorbar(sm, cax=cax, label="QV margin (lower bound − 2/3)")
+    fig.colorbar(sm, cax=cax, label="Aggregated QV margin (lower bound − 2/3)")
 
-    fig.suptitle("Node heatmaps across subset sizes", fontsize=16)
+    fig.suptitle("Aggregated QV margin across subset sizes", fontsize=16)
+
     plt.show()
 
+    fig.savefig("results/aggregated_qv_grid.png", bbox_inches="tight")
+    plt.close(fig)
+    
