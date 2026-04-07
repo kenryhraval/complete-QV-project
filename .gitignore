@@ -2,3 +2,9 @@
 venv_*
 __pycache__/
 .vscode/
+
+presentation/*
+!presentation/main.tex
+!presentation/build/
+presentation/build/*
+!presentation/build/main.pdf
